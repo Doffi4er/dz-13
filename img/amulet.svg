@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#57296b"/>
+      <stop offset="1" stop-color="#1a0f24"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="200" cy="140" r="80" fill="none" stroke="#c465e8" stroke-opacity=".4" stroke-width="2"/>
+  <circle cx="320" cy="75" r="4" fill="#fff" opacity=".4"/>
+  <circle cx="80" cy="230" r="3" fill="#fff" opacity=".3"/>
+  <text x="200" y="158" font-size="56" text-anchor="middle" font-family="Segoe UI Emoji">🔮</text>
+</svg>

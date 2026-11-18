@@ -1,0 +1,299 @@
+// дз13 два уровня
+
+// цвета
+$bg: #131320;
+$card: #1e1e2e;
+$accent: #7c4dff;
+$blue: #4d7fff;
+$text: #ffffff;
+$text2: #a5a5c5;
+$radius: 14px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg;
+    color: $text;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+
+
+/* =============== уровень 1: карточка персонажа =============== */
+
+// центрирую карточку через margin auto
+.card {
+    max-width: 340px;
+    margin: 60px auto 20px;
+    background-color: $card;
+    border: 1px solid #2e2e45;
+    border-radius: $radius;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    overflow: hidden;
+    text-align: center;
+    transition: transform .3s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    h1 {
+        margin-top: 16px;
+        font-size: 24px;
+    }
+
+    .role {
+        margin-top: 4px;
+        color: $text2;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .desc {
+        padding: 10px 20px 0;
+        color: $text2;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .rating {
+        margin-top: 8px;
+        color: #ffc94d;
+        font-size: 15px;
+    }
+
+    .skills {
+        list-style: none;
+        margin: 12px 18px 0;
+        border: 1px dashed #2e2e45;
+        border-radius: 8px;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 8px 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #26263a;
+
+            span {
+                color: $text2;
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .btns {
+        display: flex;
+        gap: 10px;
+        padding: 16px 18px 18px;
+
+        button {
+            flex: 1;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: $accent;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+
+            // это основная кнопка, при наведении темнеет
+            &:hover {
+                background-color: #6a3fe0;
+            }
+        }
+
+        .btn2 {
+            background-color: transparent;
+            border: 1px solid #2e2e45;
+            color: $text;
+
+            &:hover {
+                border-color: $blue;
+                color: $blue;
+            }
+        }
+    }
+}
+
+/* карточка персонажа: картинка, имя, описание, навыки
+   и две кнопки, кнопки в flex с gap и разным hover */
+.back {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+// =============== уровень 2: каталог ===============
+
+.header {
+    text-align: center;
+    padding: 40px 10px 0;
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        margin-top: 6px;
+        color: $text2;
+        font-size: 14px;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 30px 8%;
+}
+
+.gcard {
+    flex: 1 1 280px;
+    max-width: 360px;
+    position: relative;
+    background-color: $card;
+    border: 1px solid #2e2e45;
+    border-radius: $radius;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    overflow: hidden;
+    transition: transform .3s, border-color .3s;
+
+    // первое hover состояние: карточка поднимается и увеличивается
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
+        border-color: $accent;
+    }
+
+    img {
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .cat {
+        display: inline-block;
+        margin: 14px 18px 0;
+        padding: 3px 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: $text2;
+        border: 1px solid #2e2e45;
+        border-radius: 10px;
+    }
+
+    h2 {
+        margin: 8px 18px 0;
+        font-size: 19px;
+    }
+
+    p {
+        margin: 6px 18px 0;
+        color: $text2;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .rating {
+        margin-top: 10px;
+        color: #ffc94d;
+        font-size: 14px;
+
+        span {
+            color: $text2;
+            font-size: 12px;
+        }
+    }
+
+    button {
+        display: block;
+        width: calc(100% - 36px);
+        margin: 14px 18px 18px;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background-color: $accent;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+
+        // второе hover состояние: кнопка красится в синий
+        &:hover {
+            background-color: $blue;
+        }
+    }
+}
+
+.featured {
+    border-color: $accent;
+    box-shadow: 0 8px 24px rgba(124,77,255,.35);
+}
+
+.bage {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 9px;
+    border-radius: 10px;
+    background-color: #ffd94d;
+    color: #3a3000;
+    font-size: 11px;
+}
+
+.recom {
+    background-color: $accent;
+    color: #fff;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    color: $text2;
+    font-size: 13px;
+    border-top: 1px solid #26263a;
+}
+
+
+// узкие экраны
+@media (max-width: 640px) {
+    .cards {
+        padding: 20px 16px;
+    }
+
+    .gcard {
+        flex: 1 1 100%;
+    }
+
+    .card {
+        margin: 30px 12px 10px;
+        max-width: none;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+}
